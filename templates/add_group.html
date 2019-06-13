@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add new group</title>
+    <style>
+        .p{
+            display: block;
+            margin-bottom: 10px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+<h1>
+    Add new group
+</h1>
+<form method="get" action = 'http://localhost:8000/groups/add'>
+
+<label class="p">
+    Name <input type="text" name="name" required>
+</label>
+<label class="p">
+    Start date <input type="date" name="startDate" required>
+</label>
+<label class="p">
+    Max students <input type="number" name="maxStudents" required>
+</label>
+<input type="submit" value="OK">
+<input type="reset" value="RESET">
+</form>
+</body>
+</html>
