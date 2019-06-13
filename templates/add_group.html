@@ -15,8 +15,8 @@
 <h1>
     Add new group
 </h1>
-<form method="get" action = 'http://localhost:8000/groups/add'>
-
+<form method="POST" action = 'http://localhost:8000/groups/add'>
+    {% csrf_token %}
 <label class="p">
     Name <input type="text" name="name" required>
 </label>
