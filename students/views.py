@@ -27,3 +27,14 @@ def addStudent(request):
         student.save()
 
     return redirect('/groups/all')
+
+def search(request):
+
+    if request.method == 'GET':
+        return HttpResponse(render(request, 'search_student.html'))
+    elif request.method == 'POST':
+
+        name = request.POST.get('search_name')
+
+        return HttpResponse(
+            render(request, 'search_student.html', {'searchs': Student.objects.filter(name__iexact = name)}))
