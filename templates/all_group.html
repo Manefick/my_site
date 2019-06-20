@@ -9,6 +9,18 @@
     <p> Name : {{ group.name }}</p>
     <p> Start Date : {{ group.start_date }}</p>
     <p> Max Students : {{ group.max_students }}</p>
+    <p>id : {{ group.id }}</p>
+    <br/>
+{% endfor %}
+{% for student in students %}
+    <p> Name : {{ student.name }}</p>
+    <p> Surname : {{ student.surname }}</p>
+    <p> avg_mark : {{ student.avg_mark }}</p>
+    {% if student.group_id == 1 %}
+        <p> Group : group1</p>
+    {% else %}
+        <p>Group : {{ student.group_id }}</p>
+    {% endif %}
     <br/>
 {% endfor %}
 </body>

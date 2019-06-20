@@ -1,3 +1,8 @@
 from django.db import models
+from groups.models import Group
 
-# Create your models here.
+class Student(models.Model):
+    name = models.CharField(max_length=255, null=False, blank=False)
+    surname = models.CharField(max_length=255, null=False, blank=False)
+    avg_mark = models.IntegerField()
+    group = models.ForeignKey(Group, on_delete=models.CASCADE, null=False)

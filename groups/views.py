@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from groups.models import Group
+from students.models import Student
 
 def showGroups(request):
-    return HttpResponse(render(request, 'all_group.html', {'groups': Group.objects.all()}))
+    return HttpResponse(render(request, 'all_group.html', {'groups': Group.objects.all(), 'students': Student.objects.values()}))
 
 def addGroup(request):
 
@@ -15,7 +16,7 @@ def addGroup(request):
         start_date = request.POST.get('startDate')
         max_students = request.POST.get('maxStudents')
 
-        group =Group()
+        group = Group()
 
         group.name = name
         group.start_date = start_date
