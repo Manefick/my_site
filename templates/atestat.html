@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add new atestat</title>
+    <style>
+        .p{
+            display: block;
+            margin-bottom: 10px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+<h1>
+    Add new atestat
+</h1>
+<form method="POST" action = 'http://localhost:8000/atestat/add'>
+    {% csrf_token %}
+<label class="p">
+    Name subject <input type="text" name="name" required>
+</label>
+<label class="p">
+    Mark <input type="number" name="mark" required>
+</label>
+<label class="p">
+    Date <input type="date" name="date" required>
+</label>
+<label class="p">
+    Student_id <input type="number" name="student_id" value="1" required>
+</label>
+<input type="submit" value="OK">
+<input type="reset" value="RESET">
+     {% for value in values %}
+    <p> Name : {{ value.name }}</p>
+    <p> Last name : {{ value.surname }}</p>
+    <p> id student : {{ value.id }}</p>
+    <br/>
+{% endfor %}
+</form>
+</body>
+</html>

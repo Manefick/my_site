@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sort Students</title>
+</head>
+<body>
+{% for atestat in atestats %}
+    <p> Name Subject : {{ atestat.name_subject }}</p>
+    <p> Mark : {{ atestat.mark }}</p>
+    <p> Date : {{ atestat.date }}</p>
+    <p> Name Student: {{ atestat.student.name }}</p>
+    <p> Surname Student: {{ atestat.student.surname }}</p>
+    <br/>
+{% endfor %}
+</body>
+</html>

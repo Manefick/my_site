@@ -4,7 +4,7 @@ from groups.models import Group
 from students.models import Student
 
 def showGroups(request):
-    return HttpResponse(render(request, 'all_group.html', {'groups': Group.objects.all(), 'students': Student.objects.values()}))
+    return HttpResponse(render(request, 'all_group.html', {'groups': Group.objects.all(), 'students': Student.objects.all()}))
 
 def addGroup(request):
 

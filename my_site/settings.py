@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'groups',
     'students',
+    'atestat',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
